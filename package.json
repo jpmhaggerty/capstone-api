@@ -4,7 +4,7 @@
   "description": "Express Hello World App",
   "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "nodemon src/server.js",
     "test": "jest",
     "test:unit": "jest --coverage",
     "format": "prettier --write \"src/**/*.js\"",
@@ -14,7 +14,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.95.14",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
