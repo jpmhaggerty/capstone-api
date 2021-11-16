@@ -1,12 +1,11 @@
 // Update with your config settings.
+//to set up a container in docker for dvmnt: docker run --name container -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
 
 module.exports = {
 
   development: {
-    client: 'sqlite3',
-    connection: {
-      filename: './dev.sqlite3'
-    }
+    client: 'pg',
+    connection: 'postgres://postgres:docker@localhost/weatherapp'
   },
 
   staging: {
