@@ -157,4 +157,4 @@ app.get('/rules/tribo', function(req, res) {
     );
 });
 
-module.exports = app;
+module.exports = {app,knex};
