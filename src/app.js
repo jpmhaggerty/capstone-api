@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const knex = require('knex')(require('/home/brendankennedy/SupraCoders/Capstone/api/knexfile.js')[process.env.NODE_ENV||'development']);
+const knex = require('knex')(require('../../knexfile.js')[process.env.NODE_ENV||'development']);
 
 //Test
 app.get('/', (req, res) => {
