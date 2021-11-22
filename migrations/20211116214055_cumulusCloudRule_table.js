@@ -7,7 +7,7 @@ exports.up = function(knex) {
       table.boolean('constraint_parameter_boolean');
       table.bigInteger('user_input_integer');
       table.boolean('user_input_boolean')
-      table.string('logic_group'):
+      table.string('logic_group');
      })
   };
 
