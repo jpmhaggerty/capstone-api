@@ -43,6 +43,7 @@ app.put("/rules/lightning", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -76,6 +77,7 @@ app.put("/rules/sefm", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -109,6 +111,7 @@ app.put("/rules/cumulus", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -142,6 +145,7 @@ app.put("/rules/attached", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -175,6 +179,7 @@ app.put("/rules/detached", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -208,6 +213,7 @@ app.put("/rules/debris", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -241,6 +247,7 @@ app.put("/rules/disturbed", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -274,6 +281,7 @@ app.put("/rules/thick", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -307,6 +315,7 @@ app.put("/rules/smoke", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
@@ -340,6 +349,7 @@ app.put("/rules/tribo", (req, res) => {
       constraint_parameter_boolean: req.body.constraint_parameter_boolean,
       user_input_integer: req.body.user_input_integer,
       user_input_boolean: req.body.user_input_boolean,
+      logic_group: req.body.logic_group,
     })
     .then((data) => res.status(200).json(data))
     .catch((err) =>
