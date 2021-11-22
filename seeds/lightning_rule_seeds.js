@@ -12,6 +12,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: null,
           user_input_integer: 0,
           user_input_boolean: null,
+          logic_group: "abcd",
         },
         {
           constraint_name: "What was the time of the last lightning strike?",
@@ -19,6 +20,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: null,
           user_input_integer: Date.now(),
           user_input_boolean: null,
+          logic_group: "abcd",
         },
         {
           constraint_name:
@@ -27,6 +29,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
+          logic_group: "abcd",
         },
         {
           constraint_name:
@@ -35,6 +38,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
+          logic_group: "abcd",
         },
         {
           constraint_name:
@@ -43,6 +47,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
+          logic_group: "abcd",
         },
       ]);
     });
