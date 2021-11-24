@@ -10,7 +10,7 @@ exports.seed = function (knex) {
           constraint_name:
             "Will the flight path carry the vehicle through a non-transparent cumulus cloud attached a parent smoke plume?",
           constraint_parameter_integer: null,
-          constraint_operator: "eq",
+          constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: null,
@@ -21,7 +21,7 @@ exports.seed = function (knex) {
           constraint_name:
             "Will the flight path carry the vehicle through a non-transparent cumulus cloud that has been detached from a smoke plume within the last 60 minutes?",
           constraint_parameter_integer: null,
-          constraint_operator: "eq",
+          constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: null,
