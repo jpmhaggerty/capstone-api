@@ -22,7 +22,7 @@ describe('The different GET routes for the Weather App', function () {
       .then(data => data);
 
     expect(Array.isArray(result.body)).toBe(true);
-    expect(result.body).toHaveLength(5);
+    expect(result.body).toHaveLength(6);
     //expect(result.body[0].constraint_name).toEqual('What is the slant distance to the lightning strike? (nmi)');
   });
 //2
@@ -33,7 +33,7 @@ describe('The different GET routes for the Weather App', function () {
       .then(data => data);
 
     expect(Array.isArray(result.body)).toBe(true);
-    expect(result.body).toHaveLength(6);
+    expect(result.body).toHaveLength(5);
     //expect(result.body[0].constraint_name).toEqual('What is the slant distance to the lightning strike? (nmi)');
   });
 //3
@@ -124,46 +124,81 @@ describe('The different GET routes for the Weather App', function () {
     expect(result.body).toHaveLength(7);
     //expect(result.body[0].constraint_name).toEqual('What is the slant distance to the lightning strike? (nmi)');
   });
+  //11
+  test('An error message should be sent if there endpoint is incorrect', async () => {
+    const result = await request(app)
+      .get('/rules/platypus')
+      .expect(404)
+      .then(data => data);
+
+    expect(result.body.message).toEqual("The data you are looking for could not be found. Please try again");
+  });
 });
 
-// describe('The different patch methods to be implemented by the Weather App', () => {
-//   beforeAll(() => {
-//     return knex.migrate
-//         .latest()
-//         .then( () => knex.seed.run());
-//   });
+describe('The different put methods to be implemented by the Weather App', () => {
+  beforeAll(() => {
+    return knex.migrate
+        .latest()
+        .then( () => knex.seed.run());
+  });
 
-//   afterAll(() => {
-//     return knex.migrate
-//         .rollback()
-//         .then(() => knex.destroy());
-//   });
+  afterAll(() => {
+    return knex.migrate
+        .rollback()
+        .then(() => knex.destroy());
+  });
+  //12
+  test('PUT /weatherApp/lightning/{table_name} Update the lightning commit with a user input', (done) => {
+    const input = {
+      id: 2,
+      constraint_name: 'Flight path slant distance > 10 nmi from any non-transparent part of thunderstorm?',
+      constraint_parameter_integer: null,
+      constraint_operator: "===",
+      constraint_parameter_boolean: false,
+      user_input_integer: null,
+      user_input_boolean: true,
+      logic_group: "A|,B&"
+    }
 
-//   test('PATCH /weatherApp/lightning/{table_name} Update the lightning commit with a user input', (done) => {
-//     request(app)
-//       .patch('/weatherApp/lightning/lightning_rule')
-//       .send({
-//         input: user,
-//         criteria1: 8,
-//         criteria2: 4,
-//         criteria3: true,
-//         criteria4: true,
-//         criteria5: true
-//       })
-//       .then(res => {
-//         expect(res.status).toBe(201)
-//         expect(res.body).toEqual('Successfully updated user inputs in lightning_rule table')
-//         done();
-//       })
-//       .catch((err) => done(err));
-//   });
+    request(app)
+      .put('/rules/lightning')
+      .send(input)
+      .then(res => {
+        expect(res.status).toBe(200)
+        expect(res.body).toEqual(input)
+        done();
+      })
+      .catch((err) => done(err));
+  });
+  //13
+  test('after a post has been made, the uploaded data should be in the updated table', async () => {
+    const result = await request(app)
+      .get('/rules/lightning')
+      .expect(200)
+      .then(data => data);
 
-//   test('after a post has been made, the uploaded data should be in the updated table', async () => {
-//     const result = await request(app)
-//       .get('/weatherApp/lightning')
-//       .expect(200)
-//       .then(data => data);
+    expect(result.body[1].constraint_parameter_boolean).toEqual(false);
+  });
+  //14
+  test('An error message should be sent if id is not inputted', (done) => {
+    const input = {
+      constraint_name: 'Flight path slant distance > 10 nmi from any non-transparent part of thunderstorm?',
+      constraint_parameter_integer: null,
+      constraint_operator: "===",
+      constraint_parameter_boolean: false,
+      user_input_integer: null,
+      user_input_boolean: true,
+      logic_group: "A|,B&"
+    };
 
-//     expect(result.body[0].user_input_integer).toEqual(8);
-//   })
-// });
+    request(app)
+      .put('/rules/lightening')
+      .send(input)
+      .then( res => {
+        expect(res.status).toBe(404);
+        expect(res.body.message).toEqual("The data could not be posted. Please try again");
+        done();
+      })
+      .catch(err => done(err));
+  });
+});
