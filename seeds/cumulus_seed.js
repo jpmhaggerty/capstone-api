@@ -7,42 +7,23 @@ exports.seed = function (knex) {
       return knex("cumulus").insert([
         {
           constraint_name:
-            "Will the  flight path be through the  cloud where the cloud has a top at an altitude where the temperature is colder than or equal to +5 °C and warmer than -5 °C?",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: false,
-          user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "A&,B|,C|",
-        },
-        {
-          constraint_name: "Is the cloud producing precipitation?",
+            "Are there any cumulus clouds within 5 and 10 nmi from the flight path with cloud tops at an altitude where the temp is colder than or equal -20° C?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
-          logic_group: "A&,B|,C|,D&",
+          logic_group: "A&",
         },
         {
           constraint_name:
-            "Is the horizontal distance from the center of the cloud top to at least 1 working field mill less than 2 nmi?",
+          "Are there any cumulus clouds within 0 and 5 nmi from the flight path with cloud tops at an altitude where the temp is colder than or equal -10° C?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: true,
+          constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: false,
-          logic_group: "A&,B|,C|,D&",
-        },
-        {
-          constraint_name:
-            "Are all electric field mill measurements at a horizontal distance of less than or equal to 5 nmi from the flight path, between -100 V/m and +500 V/m for at least 15 minutes?",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: true,
-          user_input_integer: null,
-          user_input_boolean: false,
-          logic_group: "A&,B|,C|,D&",
+          user_input_boolean: true,
+          logic_group: "A&",
         },
         {
           constraint_name:
@@ -52,27 +33,46 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
+          logic_group: "A&",
+        },
+        {
+          constraint_name:
+            "Will the  flight path be through the  cloud where the cloud has a top at an altitude where the temperature is colder than or equal to +5 °C and warmer than -5 °C?",
+          constraint_parameter_integer: null,
+          constraint_operator: "===",
+          constraint_parameter_boolean: false,
+          user_input_integer: null,
+          user_input_boolean: true,
           logic_group: "A&,B|",
         },
         {
-          constraint_name:
-            "Is the cloud between 0 and 5 nmi where the cloud top is at an altitude where the temp is colder than or equal -10° C?",
+          constraint_name: "Is the cloud producing precipitation?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
-          logic_group: "A&",
+          logic_group: "A&,B|,C&",
         },
         {
           constraint_name:
-            "Is there a cloud between 5 and 10 where the cloud top is at an altitude where the temp is colder than or equal -20° C?",
+            "Is the horizontal distance from the center of the cloud top to at least 1 working field mill less than 2 nmi?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&",
+          user_input_boolean: false,
+          logic_group: "A&,B|,C&",
+        },
+        {
+          constraint_name:
+            "Have all electric field mill measurements at a horizontal distance of less than or equal to 5 nmi from the flight path, between -100 V/m and +500 V/m for at least 15 minutes?",
+          constraint_parameter_integer: null,
+          constraint_operator: "===",
+          constraint_parameter_boolean: true,
+          user_input_integer: null,
+          user_input_boolean: false,
+          logic_group: "A&,B|,C&",
         },
       ]);
     });

@@ -19,7 +19,7 @@ exports.seed = function (knex) {
         //2
         {
           constraint_name:
-            "Have 4  hours passed since the last lightning strike from that anvil cloud and has it been 3 hours since that anvil cloud detached from its parents cloud?",
+            "Have 4  hours passed since the last lightning strike from that anvil cloud and has it been 3 hours since that anvil cloud detached from its parent's cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: true,
@@ -69,7 +69,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E&",
+          logic_group: "A&,D&,E|",
         },
         //7
         {
@@ -80,7 +80,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E&",
+          logic_group: "A&,D&,E|,K&",
         },
         //8
         {
@@ -91,7 +91,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E&",
+          logic_group: "A&,D&,E|,K&",
         },
         //9
         {

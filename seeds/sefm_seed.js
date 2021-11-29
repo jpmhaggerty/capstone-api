@@ -7,23 +7,23 @@ exports.seed = function (knex) {
       return knex("sefm").insert([
         {
           constraint_name:
-          "Has any electric field reading at a horizontal distance of less than or equal to 5 nmi from the flight path been greater than or equal to 1500 V/m (absolute value) within the last 15 minutes?",
+          "Have all electric field readings at a horizontal distance of less than or equal to 5 nmi from the flight path been less than 1000 V/m (absolute value) for at least 15 minutes?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&",
+          user_input_boolean: false,
+          logic_group: "A|",
         },
         {
           constraint_name:
-          "Has any electric field reading at a horizontal distance of less than or equal to 5 nmi from the flight path been greater than or equal to 1000 V/m (absolute value) within the last 15 minutes?",
+          "Have all electric field readings at a horizontal distance of less than or equal to 5 nmi from the flight path been less than 1500 V/m (absolute value) for at least 15 minutes?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|",
+          user_input_boolean: false,
+          logic_group: "A|,B&",
         },
         {
           constraint_name:
@@ -32,8 +32,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|",
+          user_input_boolean: false,
+          logic_group: "A|,B&,C|",
         },
         {
           constraint_name:
@@ -42,8 +42,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|,C&",
+          user_input_boolean: false,
+          logic_group: "A|,B&,C|,D&",
         },
         {
           constraint_name:
@@ -52,8 +52,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|,C&",
+          user_input_boolean: false,
+          logic_group: "A|,B&,C|,D&",
         },
       ]);
     });

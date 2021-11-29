@@ -14,7 +14,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
-          logic_group: "A&,B&",
+          logic_group: "A&,B|",
         },
         //2
         {
@@ -25,7 +25,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,B&",
+          logic_group: "A&,B|,E&",
         },
         //3
         {
@@ -36,12 +36,12 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,B&",
+          logic_group: "A&,B|,E&",
         },
         //4
         {
           constraint_name:
-            "Is the flight path between 3 nmi and 5 nmi from cloud?",
+            "Is the flight path between 3 nmi and 5 nmi from cloud with a lightning discharge occurring within or from the parent cloud or anvil cloud over the past three hours?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
@@ -63,7 +63,7 @@ exports.seed = function (knex) {
         //6
         {
           constraint_name:
-            "Is the flight path between 5 nmi and 10 nmi from cloud?",
+          "Is the flight path between 5 nmi and 10 nmi from cloud with a lightning discharge occurring within or from the parent cloud or anvil cloud over the past thirty minutes?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
@@ -77,9 +77,9 @@ exports.seed = function (knex) {
             "Is the portion of the attached anvil cloud that is at a slant distance of less than or equal to 10 nmi from the flight path located entirely at altitudes where the temperature is colder than 0°C?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A&,D|",
         },
       ]);
