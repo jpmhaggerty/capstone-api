@@ -6,59 +6,40 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex("debris").insert([
         //1
-        {
-          constraint_name: "Have of the following occurred: ",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: null,
-          user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
-        },
         //2
         {
           constraint_name:
-            "The debris cloud is observed to be detached from the parent cloud?",
+            "Have three hours passed since the latest observance of the debris cloud detaching from the parent cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|",
         },
         //3
         {
           constraint_name:
-            "The debris cloud is observed to have formed by the collapse of the parent cloud top to an altitude where the temperature is warmer than -10 °C?",
+            "Have three hours passed since the latest observance of the debris cloud forming by the collapse of the parent cloud top to an altitude where the temperature is warmer than -10 °C?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|",
         },
         //4
         {
           constraint_name:
-            "Any lightning discharges occuring within or from the debris cloud?",
+            "Have three hours passed since the latest observance of any lightning discharges from or within the debris cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|",
         },
         //5
-        {
-          constraint_name:
-            "Has it been 3 hours since any the occurrence of the above three conditions?",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: true,
-          user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
-        },
         //6
         {
           constraint_name:
@@ -67,8 +48,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,C|",
         },
         //7
         {
@@ -78,8 +59,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,C|,D&",
         },
         //8
         {
@@ -89,8 +70,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,C|,D&",
         },
         //9
         {
@@ -100,8 +81,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,E|",
         },
         //10
         {
@@ -111,8 +92,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,E|,F&",
         },
         //11
         {
@@ -122,8 +103,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,E|,F&",
         },
         //12
         {
@@ -133,8 +114,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,E|,F&",
         },
         //13
         {
@@ -144,8 +125,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,E|,G&",
         },
         //14
         {
@@ -155,8 +136,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,E|,G&",
         },
       ]);
     });

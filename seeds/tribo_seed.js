@@ -11,10 +11,10 @@ exports.seed = function (knex) {
             "Will the flight path carry the launch vehicle through any part of a cloud at any altitude where:",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: null,
+          constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|",
         },
         //2
         {
@@ -23,8 +23,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|,C&",
         },
         //3
         {
@@ -34,8 +34,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,B|,C&",
         },
         //4
         {
@@ -43,10 +43,10 @@ exports.seed = function (knex) {
             "Has the launch vehicle been treated for surface electrification such that:",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: null,
+          constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: true,
+          logic_group: "A&,D|",
         },
         //5
         {
@@ -56,8 +56,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,D|,E&",
         },
         //6
         {
@@ -67,8 +67,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,D|,E&",
         },
         //7
         {
@@ -78,8 +78,8 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: null,
-          logic_group: "abcd",
+          user_input_boolean: false,
+          logic_group: "A&,D|",
         },
       ]);
     });

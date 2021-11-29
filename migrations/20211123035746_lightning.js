@@ -1,7 +1,7 @@
 exports.up = function (knex) {
   return knex.schema.createTable("lightning", (table) => {
     table.increments("id");
-    table.string("constraint_name").notNullable();
+    table.string("constraint_name", 1024).notNullable();
     table.bigInteger("constraint_parameter_integer");
     table.string("constraint_operator");
     table.boolean("constraint_parameter_boolean");
