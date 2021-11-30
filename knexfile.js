@@ -5,11 +5,11 @@ module.exports = {
 
     development: {
       client: 'pg',
- 
+
       connection: 'postgres://postgres:bacon@localhost/weatherappdb'
-    }, 
-  
-  
+    },
+
+
     staging: {
       client: 'postgresql',
       connection: {
@@ -25,7 +25,7 @@ module.exports = {
         tableName: 'knex_migrations'
       }
     },
-  
+
     production: {
       client: 'postgresql',
       connection: {
@@ -41,5 +41,5 @@ module.exports = {
         tableName: 'knex_migrations'
       }
     }
-  
+
   };
