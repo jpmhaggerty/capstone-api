@@ -19,7 +19,7 @@ exports.seed = function (knex) {
         //2
         {
           constraint_name:
-            "Have 4  hours passed since the last lightning strike from that anvil cloud and has it been 3 hours since that anvil cloud detached from its parent's cloud?",
+            "Have 4 hours passed since the last lightning strike from that anvil cloud and has it been 3 hours since that anvil cloud detached from its parent's cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: true,
@@ -52,24 +52,35 @@ exports.seed = function (knex) {
         //5
         {
           constraint_name:
-            "Is the flight path greater than 0 nmi and less than 3 nmi from cloud?",
+            "Is the flight path greater than 0 nmi but less than 3 nmi from cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
-          logic_group: "A&,D&",
+          logic_group: "A&,D|",
         },
-        //6
+        //6-Redundant
+        // {
+        //   constraint_name:
+        //   "Have 30 minutes elapsed since the last lightning discharge originating from or within either the parent or anvil cloud (before detachment), and since any lightning discharge from or within the detached anvil cloud after detachment?",
+        //   constraint_parameter_integer: null,
+        //   constraint_operator: "===",
+        //   constraint_parameter_boolean: true,
+        //   user_input_integer: null,
+        //   user_input_boolean: false,
+        //   logic_group: "A&,D|,E|",
+        // },
+        //6A- Time out
         {
           constraint_name:
-            "Has it been 30 minutes since every lightning discharge within or from the parent cloud or anvil cloud before detachment of the anvil cloud, and after every lightning discharge within or from the detached anvil cloud after detachment?",
+          "Have more than 3 hours elapsed since the last lightning discharge originating from or within either the parent or anvil cloud (before detachment), and since any lightning discharge from or within the detached anvil cloud after detachment?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E|",
+          logic_group: "A&,D|",
         },
         //7
         {
@@ -80,7 +91,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E|,K&",
+          logic_group: "A&,D|,F&",
         },
         //8
         {
@@ -91,18 +102,18 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,E|,K&",
+          logic_group: "A&,D|,F&",
         },
         //9
         {
           constraint_name:
-            "Has it been 3 hours since strike from a parent or detached anvil cloud?",
+          "Have more than 30 minutes elapsed since the last lightning discharge originating from or within either the parent or anvil cloud (before detachment), and since any lightning discharge from or within the detached anvil cloud after detachment?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,F|",
+          logic_group: "A&,D|,G&",
         },
         //10
         {
@@ -113,7 +124,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,F|,G&",
+          logic_group: "A&,D|,G&,H&",
         },
         //11
         {
@@ -124,7 +135,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,F|,G&",
+          logic_group: "A&,D|,G&,H&",
         },
         //12
         {
@@ -135,30 +146,30 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,D&,F|,G&",
+          logic_group: "A&,D|,G&,H&",
         },
-        //13
-        {
-          constraint_name:
-            "Is the portion of the detached anvil cloud at a slant distance of less than or equal to 5 nmi from the flight path is located entirely at altitudes where the temperature is colder than 0 °C?",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: true,
-          user_input_integer: null,
-          user_input_boolean: false,
-          logic_group: "A&,D&,F|,H&",
-        },
-        //14
-        {
-          constraint_name:
-            "Is the MRR is less than +7.5 dBZ at every point at a slant distance of less than or equal to 1 nmi from the flight path?",
-          constraint_parameter_integer: null,
-          constraint_operator: "===",
-          constraint_parameter_boolean: true,
-          user_input_integer: null,
-          user_input_boolean: false,
-          logic_group: "A&,D&,F|,H&",
-        },
+        //13- Redundant
+        // {
+        //   constraint_name:
+        //     "Is the portion of the detached anvil cloud at a slant distance of less than or equal to 5 nmi from the flight path is located entirely at altitudes where the temperature is colder than 0 °C?",
+        //   constraint_parameter_integer: null,
+        //   constraint_operator: "===",
+        //   constraint_parameter_boolean: true,
+        //   user_input_integer: null,
+        //   user_input_boolean: false,
+        //   logic_group: "A&,D|,G&,I&",
+        // },
+        //14- Redundant
+        // {
+        //   constraint_name:
+        //     "Is the MRR is less than +7.5 dBZ at every point at a slant distance of less than or equal to 1 nmi from the flight path?",
+        //   constraint_parameter_integer: null,
+        //   constraint_operator: "===",
+        //   constraint_parameter_boolean: true,
+        //   user_input_integer: null,
+        //   user_input_boolean: false,
+        //   logic_group: "A&,D|,G&,I&",
+        // },
         //15
         {
           constraint_name:
@@ -168,18 +179,18 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: false,
           user_input_integer: null,
           user_input_boolean: true,
-          logic_group: "A&,I|,J&",
+          logic_group: "A&,J|,K|",
         },
         //16
         {
           constraint_name:
-            "Has it been 30 minutes since the last lightning discharge within or from the parent cloud or anvil cloud before detachment, and after every lightning discharge within or from the detached anvil cloud after detachment?",
+          "Have 30 minutes elapsed since the last lightning discharge originating from or within either the parent or anvil cloud (before detachment), and since any lightning discharge from or within the detached anvil cloud after detachment?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,I|,J&",
+          logic_group: "A&,J|,K|",
         },
         //17
         {
@@ -190,7 +201,7 @@ exports.seed = function (knex) {
           constraint_parameter_boolean: true,
           user_input_integer: null,
           user_input_boolean: false,
-          logic_group: "A&,I|",
+          logic_group: "A&,J|",
         },
       ]);
     });

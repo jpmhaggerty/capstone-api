@@ -5,17 +5,17 @@ exports.seed = function (knex) {
     .then(function () {
       // Inserts seed entries
       return knex("debris").insert([
-        //1
+        //1- Not an input
         //2
         {
           constraint_name:
             "Have three hours passed since the latest observance of the debris cloud detaching from the parent cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|",
+          user_input_boolean: false,
+          logic_group: "A&,B&",
         },
         //3
         {
@@ -23,10 +23,10 @@ exports.seed = function (knex) {
             "Have three hours passed since the latest observance of the debris cloud forming by the collapse of the parent cloud top to an altitude where the temperature is warmer than -10 °C?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|",
+          user_input_boolean: false,
+          logic_group: "A&,B&",
         },
         //4
         {
@@ -34,12 +34,12 @@ exports.seed = function (knex) {
             "Have three hours passed since the latest observance of any lightning discharges from or within the debris cloud?",
           constraint_parameter_integer: null,
           constraint_operator: "===",
-          constraint_parameter_boolean: false,
+          constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: true,
-          logic_group: "A&,B|",
+          user_input_boolean: false,
+          logic_group: "A&,B&",
         },
-        //5
+        //5- Not an input
         //6
         {
           constraint_name:
