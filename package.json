@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "npx knex migrate:latest && npx knex seed:run && nodemon src/app.js",
-    "test": "NODE_ENV=deployment jest",
+    "test": "NODE_ENV=development jest",
     "test:unit": "jest --coverage",
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "eslint",
@@ -21,7 +21,8 @@
     "knex": "^0.95.14",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
-    "pg": "^8.7.1"
+    "pg": "^8.7.1",
+    "react-router-dom": "^6.0.2"
   },
   "devDependencies": {
     "eslint": "^8.1.0",
