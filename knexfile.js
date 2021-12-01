@@ -4,7 +4,7 @@
 require('dotenv').config();
 
 const connection = {
-  connectionString: `postgres://${process.env.PG_USER}:${process.env.APP_DB_ADMIN_PASSWORD}@${process.env.PGHOST}:${process.env.PG_DATABASE}`,
+  connectionString: `postgres://${process.env.PG_USER}:${process.env.APP_DB_ADMIN_PASSWORD}@${process.env.PGHOST}:${process.env.PGPORT}/${process.env.PG_DATABASE}`,
   ssl: {
     rejectUnauthorized: false,
   },
