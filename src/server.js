@@ -1,6 +1,6 @@
-const app = require("./app");
-const port = 8080;
+require('dotenv').config();
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
-});
+const app = require("./app");
+const port = process.env.PGPORT;
+
+app.listen( port || 8080 )
