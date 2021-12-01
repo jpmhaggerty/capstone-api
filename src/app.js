@@ -5,7 +5,7 @@ const app = express();
 require('dotenv').config();
 
 const knex = require("knex")(
-  require("../knexfile.js")[process.env.NODE_ENV || "development"]
+  require("../knexfile.js")[process.env.NODE_ENV ||"development"]
 );
 
 const port = 8080;
