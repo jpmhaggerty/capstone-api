@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
 const app = express();
+require('dotenv').config();
+
 const knex = require("knex")(
   require("../knexfile.js")[process.env.NODE_ENV || "development"]
 );
