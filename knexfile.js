@@ -10,64 +10,20 @@
 //   },
 // };
 
-// module.exports = {
-
-//     development: {
-//       client: 'pg',
-//       connection: 'postgres://postgres:bacon@localhost/weatherappdb'
-//     },
-
-//     staging: {
-//       client: 'pg',
-//       connection: 'postgres://postgres:bacon@localhost/weatherappdb'
-//     },
-
-//     production: {
-//       client: 'pg',
-//       connection: 'postgres://postgres:bacon@localhost/weatherappdb'
-//     },
-// };
-
-
-  module.exports = {
+module.exports = {
 
     development: {
       client: 'pg',
-
-      connection: 'postgres://postgres:bacon@localhost/weatherappdb'
+      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
     },
 
-
     staging: {
-      client: 'postgresql',
-      connection: {
-        database: 'my_db',
-        user:     'username',
-        password: 'password'
-      },
-      pool: {
-        min: 2,
-        max: 10
-      },
-      migrations: {
-        tableName: 'knex_migrations'
-      }
+      client: 'pg',
+      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
     },
 
     production: {
-      client: 'postgresql',
-      connection: {
-        database: 'my_db',
-        user:     'username',
-        password: 'password'
-      },
-      pool: {
-        min: 2,
-        max: 10
-      },
-      migrations: {
-        tableName: 'knex_migrations'
-      }
-    }
-
-  };
+      client: 'pg',
+      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
+    },
+};
