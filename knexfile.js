@@ -14,25 +14,12 @@ module.exports = {
 
     development: {
       client: 'pg',
-
       connection: 'postgres://postgres:bacon@localhost/weatherappdb'
     },
 
-
     staging: {
-      client: 'postgresql',
-      connection: {
-        database: 'my_db',
-        user:     'username',
-        password: 'password'
-      },
-      pool: {
-        min: 2,
-        max: 10
-      },
-      migrations: {
-        tableName: 'knex_migrations'
-      }
+      client: 'pg',
+      connection,
     },
 
     production: {
