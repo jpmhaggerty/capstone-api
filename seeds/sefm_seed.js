@@ -12,7 +12,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|",
         },
         {
@@ -22,7 +22,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,B&",
         },
         {
@@ -32,7 +32,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,B&,C|",
         },
         {
@@ -42,7 +42,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,B&,C|,D&",
         },
         {
@@ -52,7 +52,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,B&,C|,D&",
         },
       ]);

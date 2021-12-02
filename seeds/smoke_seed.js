@@ -13,7 +13,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A&",
         },
         //2
@@ -24,7 +24,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A&",
         },
       ]);

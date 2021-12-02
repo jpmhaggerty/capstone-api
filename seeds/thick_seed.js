@@ -13,7 +13,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A|,B|",
         },
         //2
@@ -24,7 +24,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A|,B|,C&",
         },
         //3
@@ -35,7 +35,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: false,
           user_input_integer: null,
-          user_input_boolean: true,
+          user_input_boolean: false,
           logic_group: "A|,B|,C&",
         },
         //4
@@ -46,7 +46,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,D&",
         },
         //5
@@ -57,7 +57,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,D&",
         },
         //6
@@ -68,7 +68,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|,D&",
         },
         //7
@@ -79,7 +79,7 @@ exports.seed = function (knex) {
           constraint_operator: "===",
           constraint_parameter_boolean: true,
           user_input_integer: null,
-          user_input_boolean: false,
+          user_input_boolean: true,
           logic_group: "A|",
         },
       ]);
