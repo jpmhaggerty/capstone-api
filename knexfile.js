@@ -11,19 +11,18 @@
 // };
 
 module.exports = {
+  development: {
+    client: "pg",
+    connection: "postgres://postgres:bacon@localhost:5432/weatherappdb",
+  },
 
-    development: {
-      client: 'pg',
-      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
-    },
+  staging: {
+    client: "pg",
+    connection: "postgres://postgres:bacon@localhost:5432/weatherappdb",
+  },
 
-    staging: {
-      client: 'pg',
-      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
-    },
-
-    production: {
-      client: 'pg',
-      connection: 'postgres://postgres:bacon@localhost:5432/weatherappdb'
-    },
+  production: {
+    client: "pg",
+    connection: "postgres://postgres:bacon@localhost:5432/weatherappdb",
+  },
 };
